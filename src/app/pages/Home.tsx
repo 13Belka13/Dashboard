@@ -17,8 +17,7 @@ import { Footer } from "../@shared/components/Footer";
 export const Home = () => (
   <>
     <Card
-      bg="
-     #F5F5F5"
+      bg="#E0E0E0"
       borderRadius="0"
     >
       <CardBody

@@ -8,8 +8,8 @@ import {
 
 export function Footer () {
    return <>
-   <Card borderBottomRightRadius="25" borderBottomLeftRadius="25">
-    <CardBody  paddingBlockEnd="3" paddingBlockStart="0" bg="#F7F7F7">
+   <Card bg="#F7F7F7" borderBottomRightRadius="25" borderBottomLeftRadius="25">
+    <CardBody  paddingBlockEnd="3" paddingBlockStart="0" bg="#F7F7F7" borderBottomRightRadius="25" borderBottomLeftRadius="25">
    <Flex bg="#F7F7F7" m="0" >
     
             <Text p='4' color="black">
