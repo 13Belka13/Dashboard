@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
+import { DoubleHeader } from "../@shared/components/DoubleHeader";
 export const Home = () => (
   <>
     <Card
@@ -36,9 +37,8 @@ export const Home = () => (
 
           <MenuIcon />
           <InputGroup size="md">
-            <Heading as="h1" size="2xl" color="#8A62D7" mt="60" ml="30">
-              Местоположение / карта
-            </Heading>
+ 
+ <DoubleHeader/>
             <Heading
               as="h1"
               size="4xl"
