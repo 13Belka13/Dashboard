@@ -8,6 +8,7 @@ import {
   Spacer,
   InputRightElement,
   Heading,
+  Box
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
@@ -77,7 +78,19 @@ export const Home = () => (
               errorBorderColor="crimson"
             />
           </InputGroup>
+          
+   
+      
         </Flex>
+        <Flex bg="#F7F7F7">
+            <Box p='4' color="black">
+            Выполнено командой Frogs в рамках хакатона “Молодёжный бит”
+            </Box>
+            <Spacer />
+            <Box p='4' color="black">
+            @2023 год
+            </Box>
+          </Flex>
       </CardBody>
     </Card>
   </>
