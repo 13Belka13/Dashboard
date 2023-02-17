@@ -13,6 +13,7 @@ import {
 import { SearchIcon } from "@chakra-ui/icons";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import { DoubleHeader } from "../@shared/components/DoubleHeader";
+import { Footer } from "../@shared/components/Footer";
 export const Home = () => (
   <>
     <Card
@@ -25,6 +26,7 @@ export const Home = () => (
       #FFFFFF"
         margin="60px"
         borderRadius="20px"
+        padding="0"
       >
         <Flex>
           <CardBody
@@ -38,7 +40,7 @@ export const Home = () => (
           <MenuIcon />
           <InputGroup size="md">
  
-    <DoubleHeader text={"Ghbdtn"}/>
+    <DoubleHeader text={"Местоположение / карта"}/>
 
             <Spacer />
             <InputRightElement>
@@ -63,15 +65,8 @@ export const Home = () => (
    
       
         </Flex>
-        <Flex bg="#F7F7F7">
-            <Box p='4' color="black">
-            Выполнено командой Frogs в рамках хакатона “Молодёжный бит”
-            </Box>
-            <Spacer />
-            <Box p='4' color="black">
-            @2023 год
-            </Box>
-          </Flex>
+        <Footer/>
+
       </CardBody>
     </Card>
   </>
