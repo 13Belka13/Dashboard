@@ -7,9 +7,9 @@ import { SearchIcon } from "@chakra-ui/icons";
 
 export function SearchInput () {
     return <>
-    <InputGroup marginTop="30" marginRight="30">
+    <InputGroup marginTop="30" marginRight="30" justifyContent="flex-end" width="350px">
         <InputLeftElement>
-              <SearchIcon color="#8A62D7" alignItems="right"/>
+              <SearchIcon color="#8A62D7"/>
             </InputLeftElement>
 
             <Input

@@ -16,8 +16,7 @@ export const Home = () => (
       borderRadius="0"
     >
       <CardBody
-        bg="
-      #FFFFFF"
+        bg="#FFFFFF"
         margin="60px"
         borderRadius="20px"
         padding="0"
@@ -31,12 +30,16 @@ export const Home = () => (
             marginTop="-5"
           ></CardBody>
 
+        {/*иконка меню*/}
           <MenuIcon />
-          <InputGroup size="md">
- 
+
+          <InputGroup size="md" justifyContent="space-between">
+
+        {/*компонент названия */}
             <DoubleHeader text={"Местоположение / карта"}/>
 
-            <Spacer />
+        {/*компонент инпута поиска */}
+            {/* <Spacer /> */}
 
             <SearchInput/>
             
