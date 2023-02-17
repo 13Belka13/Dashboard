@@ -1,19 +1,14 @@
 import {
   CardBody,
   Card,
-  Input,
   InputGroup,
-  InputLeftElement,
   Flex,
-  Spacer,
-  InputRightElement,
-  Heading,
-  Box
+  Spacer
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import { DoubleHeader } from "../@shared/components/DoubleHeader";
 import { Footer } from "../@shared/components/Footer";
+import { SearchInput } from "../@shared/components/SearchInput";
 export const Home = () => (
   <>
     <Card
@@ -39,26 +34,12 @@ export const Home = () => (
           <MenuIcon />
           <InputGroup size="md">
  
-    <DoubleHeader text={"Местоположение / карта"}/>
+            <DoubleHeader text={"Местоположение / карта"}/>
 
             <Spacer />
-            <InputRightElement>
-              <SearchIcon color="#8A62D7" />
-            </InputRightElement>
 
-            <Input
-              color="#808080"
-              placeholder="Поиск"
-              _placeholder={{ opacity: 0.4, color: "#808080" }}
-              bg="#FFFFFF"
-              w="350px"
-              h="40px"
-              borderRadius="30px"
-              borderColor="#8A62D7"
-              _hover={{ bg: "#FFFFFF", color: "#8A62D7" }}
-              focusBorderColor="pink.400"
-              errorBorderColor="crimson"
-            />
+            <SearchInput/>
+            
           </InputGroup>
           
    
