@@ -12,7 +12,7 @@ const breakpoints = {
 const config = {
   fonts,
   breakpoints,
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: false,
 };
 
