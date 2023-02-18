@@ -22,7 +22,6 @@ export const Home = () => (
       <CardBody
         bg="
       #FFFFFF"
-        margin="60px"
         borderRadius="20px"
       >
         <Flex>

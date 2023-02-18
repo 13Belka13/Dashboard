@@ -1,4 +1,5 @@
 import {
+    Box,
     Button,
     Drawer,
     DrawerBody,
@@ -9,29 +10,58 @@ import {
     DrawerOverlay,
     Flex,
     Heading,
+    Spacer,
     useDisclosure,
+    VStack,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import { ReactComponent as MenuIcon } from "../../../assets/ivent.svg";
+import { ReactComponent as MenuIcon } from "../../../assets/react.svg";
+import { ReactComponent as NewsIcon } from "../../../assets/News.svg";
+import { ReactComponent as IventIcon } from "../../../assets/Ivent.svg";
+import { ReactComponent as ProfileIcon } from "../../../assets/Profile.svg";
+import { ReactComponent as MapIcon } from "../../../assets/Map.svg";
 
 export const Navbar = () => {
     const navigate = useNavigate();
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
-<Flex
-      padding={4}
-      as={"nav"}
-      position="fixed"
-      w="100px"
-      bgColor={"#8A62D7"}
-      borderLeftRadius={"25px"}
-    >
-        <MenuIcon/>
-        <Link to={"/"}>
-          <Heading size={"lg"}>Test</Heading>
-        </Link>
-    
-    </Flex>
+        <Flex
+            padding={4}
+            as={"nav"}
+            position="fixed"
+            w="100px"
+            h="100vh"
+            bgColor={"#8A62D7"}
+            borderLeftRadius={"25px"}
+            zIndex={1}
+            mt={4}
+            justifyContent={"center"}
+        >
+
+            <VStack spacing={"50px"}>
+                <Box my={"30px"}>
+                    <MenuIcon />
+                </Box>
+
+                <Link to={"/"}>
+                    <NewsIcon />
+                </Link>
+
+                <Link to={"/"}>
+                    <ProfileIcon />
+                </Link>
+
+                <Link to={"/"}>
+                    <MapIcon />
+                </Link>
+
+                <Link to={"/"}>
+                    <IventIcon />
+                </Link>
+
+            </VStack>
+
+        </Flex>
     );
 };
