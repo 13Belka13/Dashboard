@@ -17,7 +17,7 @@ import {
   MenuItem,
   MenuList,
   Menu,
-MenuButton
+  MenuButton,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
@@ -26,42 +26,29 @@ import { ReactComponent as Map } from "../../assets/Map.svg";
 import { AddIcon } from "@chakra-ui/icons";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { MinusIcon } from "@chakra-ui/icons";
+import { Footer } from "../@shared/components/Footer";
+import { SearchInput } from "../@shared/components/SearchInput";
 export const Home = () => (
   <>
     <Card
       bg="
      #F5F5F5"
       borderRadius="0"
+      padding="0"
     >
       <CardBody
         bg="
       #FFFFFF"
         margin="60px"
         borderRadius="20px"
+        padding="0"
       >
         <Flex>
           <MenuIcon />
-          <InputGroup size="md">
+          <InputGroup size="md" justifyContent="space-between">
             <DoubleHeader text={"Местоположение / карта"} />
 
-            <Spacer />
-            <InputRightElement>
-              <SearchIcon color="#8A62D7" />
-            </InputRightElement>
-
-            <Input
-              color="#808080"
-              placeholder="Поиск"
-              _placeholder={{ opacity: 0.4, color: "#808080" }}
-              bg="#FFFFFF"
-              w="350px"
-              h="40px"
-              borderRadius="30px"
-              borderColor="#8A62D7"
-              _hover={{ bg: "#FFFFFF", color: "#8A62D7" }}
-              focusBorderColor="pink.400"
-              errorBorderColor="crimson"
-            />
+            <SearchInput />
           </InputGroup>
         </Flex>
         <Flex>
@@ -150,7 +137,6 @@ export const Home = () => (
                 focusBorderColor="#D4EF00"
                 errorBorderColor="#D4EF00"
               />
-              
             </Box>
 
             <Box mt="10">
@@ -166,43 +152,59 @@ export const Home = () => (
             </Box>
           </Box>
         </Flex>
-     
-<Box mt="120">
-        <Menu>
-        <MenuButton
-  as={Button}
-  rightIcon={<ChevronDownIcon />}
-  color="#2B2B2B"
-  bg="#FFFFFF"
-  boxShadow ="inset 0px 0px 0px 2px #2B2B2B" 
-  _hover={{ bg: "#FFFFFF" }}
-  _active={{ bg: "#FFFFFF"}}
-  borderRadius="30"
->
-  Учебные заведения
-</MenuButton >
-  <MenuList bg="#FFFFFF"  color="#2B2B2B" br="30" borderColor="#D4EF00">
-    <MenuItem bg="#FFFFFF"  boxShadow = "inset 0px -2px 0px #D4EF00">от А до Я</MenuItem>
-    <MenuItem bg="#FFFFFF" boxShadow = "inset 0px -2px 0px #D4EF00">от Я до А</MenuItem>
-    <MenuItem bg="#FFFFFF" boxShadow = "inset 0px -2px 0px #D4EF00">кол-во участников</MenuItem>
-    <MenuItem bg="#FFFFFF" boxShadow = "inset 0px -2px 0px #D4EF00">объем гранта</MenuItem>
-    <MenuItem bg="#FFFFFF" boxShadow = "inset 0px -2px 0px #D4EF00">по дате вверх</MenuItem>
-    <MenuItem bg="#FFFFFF" >по дате вниз</MenuItem>
-  </MenuList>
-</Menu>
-</Box>
 
-    
-        <Flex bg="#F7F7F7" mt="120">
-          <Box p="4" color="black">
-            Выполнено командой Frogs в рамках хакатона “Молодёжный бит”
-          </Box>
-          <Spacer />
-          <Box p="4" color="black">
-            @2023 год
-          </Box>
-        </Flex>
-  
+        <Box mt="120">
+          <Menu>
+            <MenuButton
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              color="#2B2B2B"
+              bg="#FFFFFF"
+              boxShadow="inset 0px 0px 0px 2px #2B2B2B"
+              _hover={{ bg: "#FFFFFF" }}
+              _active={{ bg: "#FFFFFF" }}
+              borderRadius="30"
+            >
+              Учебные заведения
+            </MenuButton>
+            <MenuList
+              bg="#FFFFFF"
+              color="#2B2B2B"
+              br="30"
+              borderColor="#2B2B2B"
+            >
+              <MenuItem bg="#FFFFFF" boxShadow="inset 0px -2px 0px #2B2B2B">
+              <Checkbox isInvalid>Смотреть все</Checkbox>
+              </MenuItem>
+              <MenuItem bg="#FFFFFF" boxShadow="inset 0px -2px 0px #2B2B2B">
+              <Checkbox isInvalid>Учебные заведения</Checkbox>
+              </MenuItem>
+              <MenuItem bg="#FFFFFF">
+              <Checkbox isInvalid>Мероприятия</Checkbox>
+              </MenuItem>
+       
+            </MenuList>
+            {/*                 
+              <MenuItem bg="#FFFFFF" boxShadow="inset 0px -2px 0px #2B2B2B">
+                от А до Я
+              </MenuItem>
+              <MenuItem bg="#FFFFFF" boxShadow="inset 0px -2px 0px #2B2B2B">
+                от Я до А
+              </MenuItem>
+              <MenuItem bg="#FFFFFF" boxShadow="inset 0px -2px 0px #2B2B2B">
+                кол-во участников
+              </MenuItem>
+              <MenuItem bg="#FFFFFF" boxShadow="inset 0px -2px 0px #2B2B2B">
+                объем гранта
+              </MenuItem>
+              <MenuItem bg="#FFFFFF" boxShadow="inset 0px -2px 0px #2B2B2B">
+                по дате вверх
+              </MenuItem>
+              <MenuItem bg="#FFFFFF">по дате вниз</MenuItem>
+            </MenuList> */}
+          </Menu>
+        </Box>
+        <Footer/>
       </CardBody>
     </Card>
   </>
