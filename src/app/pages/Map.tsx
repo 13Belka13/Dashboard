@@ -1,17 +1,12 @@
 import {
     Flex,
     Text,
-    Center,
     VStack,
     HStack,
     Spacer,
-    InputGroup,
     Box,
     Button,
-    ButtonGroup,
     Checkbox,
-    IconButton,
-    Input,
     Select,
 } from "@chakra-ui/react";
 import { DoubleHeader } from "../@shared/components/DoubleHeader";
@@ -31,7 +26,6 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { indexes } from "d3";
 
 ChartsJS.register(
     CategoryScale,
