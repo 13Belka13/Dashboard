@@ -13,6 +13,7 @@ export function DoubleHeader({ text }: Props) {
         color="#C2C9D4"
         zIndex={-2}
         mb={0}
+        fontFamily="IBM Plex Sans Thai, sans-serif"
 
         opacity={0.5}
         sx={{
@@ -22,7 +23,7 @@ export function DoubleHeader({ text }: Props) {
       >
         {text}
       </Heading>
-      <Heading as="h1" size="2xl" color="#8A62D7"        sx={{
+      <Heading as="h1" size="2xl" fontFamily="IBM Plex Sans Thai, sans-serif" color="#8A62D7"        sx={{
           transform: "translateY(-90%) translateX(-4%)",
         }}>
         {text}

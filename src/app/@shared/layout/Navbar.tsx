@@ -41,19 +41,19 @@ export const Navbar = () => {
                     <MenuIcon />
                 </Box>
 
-                <Link to={"/"}>
+                <Link to={"/main-data"}>
                     <NewsIcon />
                 </Link>
-
+{/* 
                 <Link to={"/"}>
                     <ProfileIcon />
-                </Link>
+                </Link> */}
 
                 <Link to={"/"}>
                     <MapIcon />
                 </Link>
 
-                <Link to={"/"}>
+                <Link to={"/region-data"}>
                     <IventIcon />
                 </Link>
 

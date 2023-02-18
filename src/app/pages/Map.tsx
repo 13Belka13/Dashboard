@@ -114,16 +114,17 @@ export const Map = () => {
                     <Flex alignSelf={"end"}>
                         <Box mt="100" paddingRight="60" boxShadow='dark-lg' p='6' rounded='md'>
                             <Box>
-                                <Text fontSize="md" color="black">
+                                <Text fontSize='20px' fontWeight="medium" color="#2B2B2B" fontFamily="IBM Plex Sans Thai, sans-serif" paddingBottom="10px">
                                     Регион:
                                 </Text>
                                 <Select
                                     color="#808080"
                                     placeholder="Выберите регион"
+                                    fontSize="15px"
                                     _placeholder={{ opacity: 0.4, color: "#808080" }}
                                     bg="#FFFFFF"
                                     w="350px"
-                                    h="40px"
+                                    h="50px"
                                     borderRadius="30px"
                                     borderColor="#D4EF00"
                                     _hover={{ bg: "#FFFFFF", color: "#8A62D7" }}
@@ -138,20 +139,22 @@ export const Map = () => {
                                     ))}
                                 </Select>
                             </Box>
-                            <Checkbox size="md" colorScheme="red" color="#BCBCBE" isInvalid mt="1">
+                            <Checkbox marginLeft="10px" paddingTop="10px" isInvalid mt="1" fontSize='20px' fontWeight="medium" color="#2B2B2B" fontFamily="IBM Plex Sans Thai, sans-serif" paddingBottom="10px">
                                 Смотреть все
                             </Checkbox>
+
                             <Box mt="10">
-                                <Text fontSize="md" color="black">
+                                <Text fontSize='20px' fontWeight="medium" color="#2B2B2B" fontFamily="IBM Plex Sans Thai, sans-serif" paddingBottom="10px">
                                     Город:
                                 </Text>
                                 <Select
                                     color="#808080"
                                     placeholder="Выберите город"
+                                    fontSize="15px"
                                     _placeholder={{ opacity: 0.4, color: "#808080" }}
                                     bg="#FFFFFF"
                                     w="350px"
-                                    h="40px"
+                                    h="50px"
                                     borderRadius="30px"
                                     borderColor="#D4EF00"
                                     _hover={{ bg: "#FFFFFF", color: "#8A62D7" }}
@@ -168,7 +171,7 @@ export const Map = () => {
                             </Box>
 
                             <Box mt="10">
-                                <Text fontSize="md" color="black" mb="10">
+                                <Text fontSize='20px' fontWeight="medium" color="#2B2B2B" fontFamily="IBM Plex Sans Thai, sans-serif" paddingBottom="10px">
                                     Выбранное:
                                 </Text>
                                 <Text fontSize="md" color="black" mb="10">
