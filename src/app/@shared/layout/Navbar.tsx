@@ -18,6 +18,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { MenuIcon } from "../icons/MenuIcon";
 import { NewsIcon } from "../icons/NewsIcon";
 import { ProfileIcon } from "../icons/ProfileIcon";
+import { EduIcon } from '../icons/EduIcon';
 import { MapIcon } from "../icons/MapIcon";
 import { IventIcon } from "../icons/IventIcon";
 
@@ -54,7 +55,7 @@ export const Navbar = () => {
                 </Link>
 
                 <Link to={"/region-data"}>
-                    <IventIcon />
+                    <EduIcon />
                 </Link>
 
             </VStack>

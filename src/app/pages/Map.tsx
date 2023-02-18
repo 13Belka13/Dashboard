@@ -65,12 +65,16 @@ export const Map = () => {
             h="100%"
         >
             <VStack w="full" alignItems={"center"} spacing={"60px"}>
-                <HStack w="full">
-                    <Box m={6}>
-                        <MenuIcon />
-                    </Box>
-                    <Spacer />
-                    <SearchInput />
+                <HStack w="full" display="flex" justifyContent="flex-end">
+                    {/* <Box m={6}> */}
+                        {/* <MenuIcon /> */}
+                        {/* <Spacer /> */}
+                
+                    {/* </Box> */}
+                    {/* <Spacer />
+                    <SearchInput /> */}
+
+                <SearchInput /> 
                 </HStack>
                 <DoubleHeader text={"Местоположение / карта"} />
                 <HStack alignSelf={"start"} w={"full"}>

@@ -9,7 +9,8 @@ export function MainDataPage () {
     <Card bg="#FFFFFF"
     borderRadius="20px"
     padding="0"
-    height="100vh">
+    height="100vh"
+    shadow="0">
 
     <Flex justifyContent="flex-end">
         <SearchInput />
@@ -21,8 +22,9 @@ export function MainDataPage () {
 
 
     <CardBody>
+        
 
-        <Text fontSize='lg' as='b' color="#2B2B2B">
+        <Text fontSize='lg' as='b' color="#2B2B2B" paddingLeft="50px">
             А вот тут собраны основные показатели. Основываясь на статистике, мы можем сделать вывод, что....
         </Text>
     </CardBody>
