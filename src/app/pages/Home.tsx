@@ -1,10 +1,9 @@
 import {
   CardBody,
   Card,
-  Input,
   InputGroup,
-  InputLeftElement,
   Flex,
+<<<<<<< HEAD
   Spacer,
   InputRightElement,
   Heading,
@@ -14,51 +13,63 @@ import {
   IconButton,
   Text,
   Checkbox,
+=======
+  Spacer
+>>>>>>> 098a80e2b1d19e6ecb8e11a3d7a6a5a0c72935b0
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import { DoubleHeader } from "../@shared/components/DoubleHeader";
+<<<<<<< HEAD
 import { ReactComponent as Map } from "../../assets/Map.svg";
 import { AddIcon } from "@chakra-ui/icons";
 import { MinusIcon } from "@chakra-ui/icons";
+=======
+import { Footer } from "../@shared/components/Footer";
+import { SearchInput } from "../@shared/components/SearchInput";
+>>>>>>> 098a80e2b1d19e6ecb8e11a3d7a6a5a0c72935b0
 export const Home = () => (
   <>
     <Card
-      bg="
-     #F5F5F5"
+      bg="#E0E0E0"
       borderRadius="0"
     >
       <CardBody
-        bg="
-      #FFFFFF"
+        bg="#FFFFFF"
         margin="60px"
         borderRadius="20px"
+        padding="0"
       >
         <Flex>
+<<<<<<< HEAD
           <MenuIcon />
           <InputGroup size="md">
             <DoubleHeader text={"Местоположение / карта"} />
+=======
+          <CardBody
+            bg="#8A62D7"
+            h="1100px"
+            w="100px"
+            marginLeft="-5"
+            marginTop="-5"
+          ></CardBody>
 
-            <Spacer />
-            <InputRightElement>
-              <SearchIcon color="#8A62D7" />
-            </InputRightElement>
+        {/*иконка меню*/}
+          <MenuIcon />
+>>>>>>> 098a80e2b1d19e6ecb8e11a3d7a6a5a0c72935b0
 
-            <Input
-              color="#808080"
-              placeholder="Поиск"
-              _placeholder={{ opacity: 0.4, color: "#808080" }}
-              bg="#FFFFFF"
-              w="350px"
-              h="40px"
-              borderRadius="30px"
-              borderColor="#8A62D7"
-              _hover={{ bg: "#FFFFFF", color: "#8A62D7" }}
-              focusBorderColor="pink.400"
-              errorBorderColor="crimson"
-            />
+          <InputGroup size="md" justifyContent="space-between">
+
+        {/*компонент названия */}
+            <DoubleHeader text={"Местоположение / карта"}/>
+
+        {/*компонент инпута поиска */}
+            {/* <Spacer /> */}
+
+            <SearchInput/>
+            
           </InputGroup>
         </Flex>
+<<<<<<< HEAD
         <Flex>
           <Box>
             <Box position="relative">
@@ -162,6 +173,10 @@ export const Home = () => (
             @2023 год
           </Box>
         </Flex>
+=======
+        <Footer/>
+
+>>>>>>> 098a80e2b1d19e6ecb8e11a3d7a6a5a0c72935b0
       </CardBody>
     </Card>
   </>
