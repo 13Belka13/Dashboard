@@ -17,14 +17,45 @@ import {
 import { DoubleHeader } from "../@shared/components/DoubleHeader";
 import { MenuIcon } from "../@shared/icons/MenuIcon";
 import { SearchInput } from "../@shared/components/SearchInput";
-import { AddIcon, MinusIcon } from "@chakra-ui/icons";
-import { Annotation, ComposableMap, Geographies, Geography, GeographyProps, ZoomableGroup } from "react-simple-maps";
-import { Key, useState } from "react";
-import mapData from '../@shared/maps/russia.json';
+import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { useState } from "react";
+import mapData from "../data/russia.json";
+import BarChart from "../@shared/components/Chart";
+import { REGIONS, Region } from "../@shared/utils/regins.util";
+import {
+    Chart as ChartsJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { indexes } from "d3";
+
+ChartsJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+)
 
 
 export const Map = () => {
 
+
+    const [selectedRegions, setSelectedRegions] = useState([] as number[]);
+
+    function handleRegionClick(index: any) {
+        setSelectedRegions([Number(index)]);
+    }
+
+    function handleDropdownChange(event: { target: { value: any; }; }) {
+        const index = event.target.value;
+        setSelectedRegions([...selectedRegions, Number(index)]);
+    }
 
     function handleSelect(option: string) {
         console.log(`Selected option: ${option}`);
@@ -32,15 +63,7 @@ export const Map = () => {
 
     const [activeRegion, setActiveRegion] = useState<Region | null>(null);
 
-    function handleGeographyClick(geography: any) {
-
-        const region = REGIONS.find((r) => r.code === geography.properties?.adm1_code);
-        console.log(geography.properties);
-        if (region) {
-            setActiveRegion(region);
-            console.log(`Clicked on region: ${region.name}`);
-        }
-    }
+    console.log(selectedRegions);
 
     return (
         <Flex
@@ -76,7 +99,7 @@ export const Map = () => {
                                         <Geography
                                             key={geography.rsmKey}
                                             geography={geography}
-                                            onClick={() => handleGeographyClick(geography)}
+                                            onClick={() => handleRegionClick(geography.properties.PID)}
                                             style={{
                                                 default: {
                                                     fill: '#D6D6DA',
@@ -115,10 +138,10 @@ export const Map = () => {
                                     _hover={{ bg: "#FFFFFF", color: "#8A62D7" }}
                                     focusBorderColor="#D4EF00"
                                     errorBorderColor="#D4EF00"
-                                    onChange={(event) => handleSelect(event.target.value)}
+                                    onChange={handleDropdownChange}
                                 >
                                     {REGIONS.map((option) => (
-                                        <option key={option.code} value={option.code}>
+                                        <option key={option.PID} value={option.PID}>
                                             {option.name}
                                         </option>
                                     ))}
@@ -146,7 +169,7 @@ export const Map = () => {
                                     onChange={(event) => handleSelect(event.target.value)}
                                 >
                                     {REGIONS.map((option) => (
-                                        <option key={option.code} value={option.code}>
+                                        <option key={option.PID} value={option.PID}>
                                             {option.name}
                                         </option>
                                     ))}
@@ -169,11 +192,11 @@ export const Map = () => {
                         </Box>
                     </Flex>
                 </HStack>
-                <Box w="full" h="full">
+                <Box w="full" h="full" mb={10}>
                     <Text fontSize="md" color="black" mb="10">
                         Сравнение:
                     </Text>
-                    <BarChart />
+                    <BarChart indexes={selectedRegions} />
                 </Box>
             </VStack>
         </Flex >
