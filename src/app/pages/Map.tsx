@@ -17,42 +17,11 @@ import {
 import { DoubleHeader } from "../@shared/components/DoubleHeader";
 import { MenuIcon } from "../@shared/icons/MenuIcon";
 import { SearchInput } from "../@shared/components/SearchInput";
-import { ComposableMap, Geographies, Geography } from "react-simple-maps";
-import { useState } from "react";
-import {
-    Chart as ChartsJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-} from 'chart.js';
-// import M1Data from '../@shared/maps/region_sum.csv';
-import mapData from '../data/russia.json';
-import BarChart from "../@shared/components/Chart";
+import { AddIcon, MinusIcon } from "@chakra-ui/icons";
+import { Annotation, ComposableMap, Geographies, Geography, GeographyProps, ZoomableGroup } from "react-simple-maps";
+import { Key, useState } from "react";
+import mapData from '../@shared/maps/russia.json';
 
-ChartsJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-)
-
-
-type Region = {
-    name: string;
-    code: string;
-};
-
-const REGIONS: Region[] = [
-    { name: 'Москва', code: 'RU-MOW' },
-    { name: 'Санкт-Петербург', code: 'RU-SPE' },
-    { name: 'Адыгея', code: 'RU-AD' },
-    // и т.д.
-];
 
 export const Map = () => {
 
