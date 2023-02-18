@@ -1,26 +1,40 @@
 import {
     Flex,
     Text,
-    Center,
     VStack,
     HStack,
     Spacer,
-    InputGroup,
     Box,
     Button,
-    ButtonGroup,
     Checkbox,
-    IconButton,
-    Input,
     Select,
 } from "@chakra-ui/react";
 import { DoubleHeader } from "../@shared/components/DoubleHeader";
 import { MenuIcon } from "../@shared/icons/MenuIcon";
 import { SearchInput } from "../@shared/components/SearchInput";
-import { AddIcon, MinusIcon } from "@chakra-ui/icons";
-import { Annotation, ComposableMap, Geographies, Geography, GeographyProps, ZoomableGroup } from "react-simple-maps";
-import { Key, useState } from "react";
-import mapData from '../@shared/maps/russia.json';
+import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { useState } from "react";
+import mapData from "../data/russia.json";
+import BarChart from "../@shared/components/Chart";
+import { REGIONS, Region } from "../@shared/utils/regins.util";
+import {
+    Chart as ChartsJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+
+ChartsJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+)
 
 
 export const Map = () => {
@@ -34,7 +48,7 @@ export const Map = () => {
 
     function handleGeographyClick(geography: any) {
 
-        const region = REGIONS.find((r) => r.code === geography.properties?.adm1_code);
+        const region = REGIONS.find((r) => r.PID === geography.properties?.adm1_code);
         console.log(geography.properties);
         if (region) {
             setActiveRegion(region);
@@ -118,7 +132,7 @@ export const Map = () => {
                                     onChange={(event) => handleSelect(event.target.value)}
                                 >
                                     {REGIONS.map((option) => (
-                                        <option key={option.code} value={option.code}>
+                                        <option key={option.PID} value={option.PID}>
                                             {option.name}
                                         </option>
                                     ))}
@@ -146,7 +160,7 @@ export const Map = () => {
                                     onChange={(event) => handleSelect(event.target.value)}
                                 >
                                     {REGIONS.map((option) => (
-                                        <option key={option.code} value={option.code}>
+                                        <option key={option.PID} value={option.PID}>
                                             {option.name}
                                         </option>
                                     ))}

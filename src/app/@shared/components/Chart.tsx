@@ -1,4 +1,5 @@
 import { Select } from "@chakra-ui/react";
+import { useState } from "react";
 import { Bar } from "react-chartjs-2";
 import Regions from "../../data/regions.csv";
 
@@ -10,7 +11,7 @@ const options = {
     },
 };
 
-const param: string[] = [
+const params: string[] = [
     " ТВ-сюжетов",
     "Регион",	
     "Округ",	
@@ -59,35 +60,17 @@ const param: string[] = [
     "Общее количество региональных ресурсных центров поддержки добровольчества на территории субъекта Российской Федерации:",
 ];
 
-const data = {
-    labels: ["1", "2", "3", "4", "5", "6"],
-    datasets: [
-        {
-            label: "New Confirmed",
-            data: [1, 2, 3, 4, 5, 6],
-            backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-                "rgba(75, 192, 192, 0.2)",
-                "rgba(153, 102, 255, 0.2)",
-                "rgba(255, 159, 64, 0.2)",
-            ],
-            borderColor: [
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(255, 206, 86, 1)",
-                "rgba(75, 192, 192, 1)",
-                "rgba(153, 102, 255, 1)",
-                "rgba(255, 159, 64, 1)",
-            ],
-            borderWidth: 1,
-        },
-    ],
-};
-
 
 const BarChart: React.FunctionComponent = () => {
+
+    const [selectedParam, setSelectedParam] = useState<string>(
+        "Cуммарное Кол-во рег. объединений, ед"
+      );
+
+    function handleSelect(option: string) {
+        console.log(`Selected option: ${option}`);
+        setSelectedParam(option);
+    }
 
     const generateChartData = () => {
 
@@ -96,7 +79,7 @@ const BarChart: React.FunctionComponent = () => {
 
         console.log("filtered", filteredRegions);
 
-        const data: number[] = filteredRegions.map((item: { [x: string]: any; }) => [item["Cуммарное Кол-во рег. объединений, ед"]])
+        const data: number[] = filteredRegions.map((item: { [x: string]: any; }) => [item[selectedParam]])
         const labels: string[] = filteredRegions.map((item: { [x: string]: any; }) => [item["Регион"]]);;
 
         return {
@@ -131,7 +114,7 @@ const BarChart: React.FunctionComponent = () => {
         <>
             <Select
                 color="#808080"
-                placeholder="Выберите город"
+                placeholder={selectedParam}
                 _placeholder={{ opacity: 0.4, color: "#808080" }}
                 bg="#FFFFFF"
                 w="350px"
@@ -143,9 +126,9 @@ const BarChart: React.FunctionComponent = () => {
                 errorBorderColor="#D4EF00"
                 onChange={(event) => handleSelect(event.target.value)}
             >
-                {REGIONS.map((option) => (
-                    <option key={option.code} value={option.code}>
-                        {option.name}
+                {params.map((item, index) => (
+                    <option key={index}>
+                        {item}
                     </option>
                 ))}
             </Select>
