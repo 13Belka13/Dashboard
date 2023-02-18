@@ -3,7 +3,6 @@ import {
   Card,
   InputGroup,
   Flex,
-<<<<<<< HEAD
   Spacer,
   InputRightElement,
   Heading,
@@ -13,20 +12,15 @@ import {
   IconButton,
   Text,
   Checkbox,
-=======
   Spacer
->>>>>>> 098a80e2b1d19e6ecb8e11a3d7a6a5a0c72935b0
 } from "@chakra-ui/react";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import { DoubleHeader } from "../@shared/components/DoubleHeader";
-<<<<<<< HEAD
 import { ReactComponent as Map } from "../../assets/Map.svg";
 import { AddIcon } from "@chakra-ui/icons";
 import { MinusIcon } from "@chakra-ui/icons";
-=======
 import { Footer } from "../@shared/components/Footer";
 import { SearchInput } from "../@shared/components/SearchInput";
->>>>>>> 098a80e2b1d19e6ecb8e11a3d7a6a5a0c72935b0
 export const Home = () => (
   <>
     <Card
@@ -40,11 +34,9 @@ export const Home = () => (
         padding="0"
       >
         <Flex>
-<<<<<<< HEAD
           <MenuIcon />
           <InputGroup size="md">
             <DoubleHeader text={"Местоположение / карта"} />
-=======
           <CardBody
             bg="#8A62D7"
             h="1100px"
@@ -55,7 +47,6 @@ export const Home = () => (
 
         {/*иконка меню*/}
           <MenuIcon />
->>>>>>> 098a80e2b1d19e6ecb8e11a3d7a6a5a0c72935b0
 
           <InputGroup size="md" justifyContent="space-between">
 
@@ -69,7 +60,6 @@ export const Home = () => (
             
           </InputGroup>
         </Flex>
-<<<<<<< HEAD
         <Flex>
           <Box>
             <Box position="relative">
@@ -173,10 +163,8 @@ export const Home = () => (
             @2023 год
           </Box>
         </Flex>
-=======
         <Footer/>
 
->>>>>>> 098a80e2b1d19e6ecb8e11a3d7a6a5a0c72935b0
       </CardBody>
     </Card>
   </>
