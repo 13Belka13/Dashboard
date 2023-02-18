@@ -5,6 +5,7 @@ import { Flex } from "@chakra-ui/layout"
 import { Text } from "@chakra-ui/layout"
 import { DoubleHeader } from "../@shared/components/DoubleHeader"
 import { SearchInput } from "../@shared/components/SearchInput"
+import { Heading } from "@chakra-ui/layout"
 
 export function RegionDataPage () {
     return <>

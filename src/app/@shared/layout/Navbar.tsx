@@ -21,6 +21,7 @@ import { ProfileIcon } from "../icons/ProfileIcon";
 import { EduIcon } from '../icons/EduIcon';
 import { MapIcon } from "../icons/MapIcon";
 import { IventIcon } from "../icons/IventIcon";
+import { IconLogo } from "../icons/IconLogo";
 
 export const Navbar = () => {
     const navigate = useNavigate();
@@ -39,7 +40,8 @@ export const Navbar = () => {
 
             <VStack spacing={"50px"}>
                 <Box my={"30px"}>
-                    <MenuIcon />
+                    {/* <MenuIcon /> */}
+                    <IconLogo />
                 </Box>
 
                 <Link to={"/main-data"}>
