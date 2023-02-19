@@ -117,7 +117,7 @@ export function MainDataPage () {
     <CardBody>
         {/*отображение нескольких графиков */}
         <Box>
-            <BarChart />
+            <BarChart/>
             <LineCharts />
             {/* <PieCharts /> */}
         </Box>
