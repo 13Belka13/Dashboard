@@ -143,7 +143,7 @@ export const Map = () => {
                                     ))}
                                 </Select>
                             </Box>
-                            <Checkbox marginLeft="10px" paddingTop="10px" isInvalid mt="1" fontSize='20px' fontWeight="medium" color="#2B2B2B" fontFamily="IBM Plex Sans Thai, sans-serif" paddingBottom="10px">
+                            <Checkbox colorScheme="black" iconColor='#D4EF00' marginLeft="10px" paddingTop="10px"  mt="1" borderColor="gray" fontSize='20px' fontWeight="medium" color="#2B2B2B" fontFamily="IBM Plex Sans Thai, sans-serif" paddingBottom="10px">
                                 Смотреть все
                             </Checkbox>
 
