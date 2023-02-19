@@ -108,7 +108,7 @@ export function MainDataPage () {
     <CardBody>
         {/*отображение нескольких графиков */}
         <Box marginTop="30px" marginBottom="30px">
-            <BarChart />
+            {/* <BarChart indexes={}/> */}
             <Box height="45px"></Box>
             <LineCharts />
             {/* <PieCharts /> */}
