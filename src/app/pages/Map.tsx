@@ -17,25 +17,33 @@ import { useState } from "react";
 import mapData from "../data/russia.json";
 import BarChart from "../@shared/components/Chart";
 import { REGIONS, Region } from "../@shared/utils/regins.util";
+import { Chart } from 'react-chartjs-2';
 import {
     Chart as ChartsJS,
     CategoryScale,
     LinearScale,
     BarElement,
+    PointElement,
+    LineElement,
     Title,
     Tooltip,
     Legend,
+    LineController,
+    BarController
 } from 'chart.js';
+import  LineChar  from "../@shared/components/LineChart";
 
 ChartsJS.register(
-    CategoryScale,
     LinearScale,
+    CategoryScale,
     BarElement,
-    Title,
-    Tooltip,
+    PointElement,
+    LineElement,
     Legend,
+    Tooltip,
+    LineController,
+    BarController
 )
-
 
 export const Map = () => {
 

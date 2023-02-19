@@ -1,9 +1,9 @@
-import { Select } from "@chakra-ui/react";
+import { Flex, Select, Spacer } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
-import { Bar } from "react-chartjs-2";
+import { Bar, Chart } from "react-chartjs-2";
 import { RegionCSV } from "../../data/region";
-import {regions} from "../../data/regions-csv";
+import { regions } from "../../data/regions-csv";
 
 const options = {
     plugins: {
@@ -60,7 +60,7 @@ const params: { code: string, text: string }[] = [
     { code: "yr", text: "Кол-во госуд. учр. на территории субъекта, работающих с добровольцами (волонтерами)" },
     { code: "ys", text: "Число граждан, вовлеченных в добровольческую деятельность на тер. субъекта" },
     { code: "yt", text: "Число граждан, вовлеченных центрами поддержки добровольчества на базе образовательных организаций" },
-    { code: "yu", text: "Кол-во региональных ресурсных центров поддержки добровольчества на тер. субъекта" } 
+    { code: "yu", text: "Кол-во региональных ресурсных центров поддержки добровольчества на тер. субъекта" }
 ];
 
 
@@ -74,9 +74,18 @@ const BarChart: React.FunctionComponent<BarChartProps> = ({ indexes }) => {
         "Cуммарное Кол-во рег. объединений, ед"
     );
 
+    const [selectedParam2, setSelectedParam2] = useState<string>(
+        "Cуммарное Кол-во рег. объединений, ед"
+    );
+
     function handleSelect(option: string) {
         console.log(`Selected option: ${option}`);
         setSelectedParam(option);
+    }
+
+    function handleSelect2(option: string) {
+        console.log(`Selected option: ${option}`);
+        setSelectedParam2(option);
     }
 
     const generateChartData = () => {
@@ -93,6 +102,11 @@ const BarChart: React.FunctionComponent<BarChartProps> = ({ indexes }) => {
             const key = param?.code || null;
             return !!key ? (region as any)[key] : null;
         })
+        const data2: number[] = filteredRegions.map(region => {
+            const param = params.find(param => param.code === selectedParam2);
+            const key = param?.code || null;
+            return !!key ? (region as any)[key] : null;
+        })
 
         console.log("data", data)
 
@@ -102,6 +116,7 @@ const BarChart: React.FunctionComponent<BarChartProps> = ({ indexes }) => {
             labels,
             datasets: [
                 {
+                    type:"bar",
                     label: "New Confirmed",
                     data,
                     backgroundColor: [
@@ -122,12 +137,18 @@ const BarChart: React.FunctionComponent<BarChartProps> = ({ indexes }) => {
                     ],
                     borderWidth: 1,
                 },
+                {
+                    type:"line",
+                    label:"",
+                    data: data2,
+                    backgroundColor:"rgb(255,100,100)"
+                }
             ],
         };
     };
 
     return (
-        <>
+        <><Flex width="70%">
             <Select
                 color="#808080"
                 placeholder={selectedParam}
@@ -148,7 +169,29 @@ const BarChart: React.FunctionComponent<BarChartProps> = ({ indexes }) => {
                     </option>
                 ))}
             </Select>
-            <Bar data={generateChartData()} options={options} />
+            <Spacer />
+            <Select
+                color="#808080"
+                placeholder={selectedParam2}
+                _placeholder={{ opacity: 0.4, color: "#808080" }}
+                bg="#FFFFFF"
+                w="350px"
+                h="40px"
+                borderRadius="30px"
+                borderColor="#D4EF00"
+                _hover={{ bg: "#FFFFFF", color: "#8A62D7" }}
+                focusBorderColor="#D4EF00"
+                errorBorderColor="#D4EF00"
+                onChange={(event) => handleSelect2(event.target.value)}
+            >
+                {params.map((item, index) => (
+                    <option key={index} value={item.code}>
+                        {item.text}
+                    </option>
+                ))}
+            </Select>
+        </Flex>
+            <Chart type="bar" data={generateChartData()} options={options} />
         </>
     );
 };
