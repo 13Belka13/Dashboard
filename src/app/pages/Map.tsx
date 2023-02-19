@@ -17,28 +17,47 @@ import { useState } from "react";
 import mapData from "../data/russia.json";
 import BarChart from "../@shared/components/Chart";
 import { REGIONS, Region } from "../@shared/utils/regins.util";
+import { Chart } from 'react-chartjs-2';
 import {
     Chart as ChartsJS,
     CategoryScale,
     LinearScale,
     BarElement,
+    PointElement,
+    LineElement,
     Title,
     Tooltip,
     Legend,
+    LineController,
+    BarController
 } from 'chart.js';
+import  LineChar  from "../@shared/components/LineChart";
 
 ChartsJS.register(
-    CategoryScale,
     LinearScale,
+    CategoryScale,
     BarElement,
-    Title,
-    Tooltip,
+    PointElement,
+    LineElement,
     Legend,
+    Tooltip,
+    LineController,
+    BarController
 )
-
 
 export const Map = () => {
 
+
+    const [selectedRegions, setSelectedRegions] = useState([] as number[]);
+
+    function handleRegionClick(index: any) {
+        setSelectedRegions([Number(index)]);
+    }
+
+    function handleDropdownChange(event: { target: { value: any; }; }) {
+        const index = event.target.value;
+        setSelectedRegions([...selectedRegions, Number(index)]);
+    }
 
     function handleSelect(option: string) {
         console.log(`Selected option: ${option}`);
@@ -46,15 +65,7 @@ export const Map = () => {
 
     const [activeRegion, setActiveRegion] = useState<Region | null>(null);
 
-    function handleGeographyClick(geography: any) {
-
-        const region = REGIONS.find((r) => r.PID === geography.properties?.adm1_code);
-        console.log(geography.properties);
-        if (region) {
-            setActiveRegion(region);
-            console.log(`Clicked on region: ${region.name}`);
-        }
-    }
+    console.log(selectedRegions);
 
     return (
         <Flex
@@ -94,7 +105,7 @@ export const Map = () => {
                                         <Geography
                                             key={geography.rsmKey}
                                             geography={geography}
-                                            onClick={() => handleGeographyClick(geography)}
+                                            onClick={() => handleRegionClick(geography.properties.PID)}
                                             style={{
                                                 default: {
                                                     fill: '#D6D6DA',
@@ -134,7 +145,7 @@ export const Map = () => {
                                     _hover={{ bg: "#FFFFFF", color: "#8A62D7" }}
                                     focusBorderColor="#D4EF00"
                                     errorBorderColor="#D4EF00"
-                                    onChange={(event) => handleSelect(event.target.value)}
+                                    onChange={handleDropdownChange}
                                 >
                                     {REGIONS.map((option) => (
                                         <option key={option.PID} value={option.PID}>
@@ -190,11 +201,11 @@ export const Map = () => {
                         </Box>
                     </Flex>
                 </HStack>
-                <Box w="full" h="full">
+                <Box w="full" h="full" mb={10}>
                     <Text fontSize="md" color="black" mb="10">
                         Сравнение:
                     </Text>
-                    <BarChart />
+                    <BarChart indexes={selectedRegions} />
                 </Box>
             </VStack>
         </Flex >
