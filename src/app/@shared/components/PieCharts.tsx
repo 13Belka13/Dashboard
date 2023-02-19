@@ -25,6 +25,30 @@ ChartJS.register(
   BarController
 );
 
+const options = {
+  plugins: {
+  subtitle: {
+    display: true,
+    text: 'Custom Chart Subtitle'
+  },
+  tooltip: {
+    backgroundColor: "#FFFFFF",
+    titleColor: "#2B2B2B",
+    bodyColor: "#2B2B2B",
+    padding: 10,
+    borderColor: "#8A62D7",
+    cornerRadius: 13,
+    borderWidth: 1,
+  },
+          font: {
+              color: "#2B2B2B",
+              size: 10,
+              family: '"IBM Plex Sans Thai", sans-serif',
+          }
+
+
+          }
+        };
 
 export const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -55,7 +79,7 @@ export const data = {
 
 export function PieCharts () {
     return (<>
- <Pie data={data} />;
+ <Pie data={data} options={options}/>;
 
     </>)
 }

@@ -6,6 +6,7 @@ import { Map } from './pages/Map';
 import { Layout } from './@shared/layout';
 import { MainDataPage } from './pages/MainDataPage';
 import { RegionDataPage } from './pages/RegionDataPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
       <Route index element={<Map  />} />
       <Route path="/main-data" element={<MainDataPage/>} />
       <Route path="/region-data" element={<RegionDataPage/>} />
+      <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
 );

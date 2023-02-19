@@ -35,8 +35,28 @@ const options = {
         legend: {
             display: false,
         },
+    subtitle: {
+      display: true,
+      text: 'Custom Chart Subtitle'
     },
-};
+    tooltip: {
+      backgroundColor: "#FFFFFF",
+      titleColor: "#2B2B2B",
+      bodyColor: "#2B2B2B",
+      padding: 10,
+      borderColor: "#8A62D7",
+      cornerRadius: 13,
+      borderWidth: 1,
+    },
+            font: {
+                color: "#2B2B2B",
+                size: 10,
+                family: '"IBM Plex Sans Thai", sans-serif',
+            }
+  
+  
+            }
+          };
 
 const params: { code: string, text: string }[] = [
     { code: "xa", text: "Номер" },
@@ -145,20 +165,20 @@ const BarChart: React.FunctionComponent<BarChartProps> = ({ indexes }) => {
                     label: "New Confirmed",
                     data,
                     backgroundColor: [
-                        "rgba(255, 99, 132, 0.2)",
-                        "rgba(54, 162, 235, 0.2)",
-                        "rgba(255, 206, 86, 0.2)",
-                        "rgba(75, 192, 192, 0.2)",
-                        "rgba(153, 102, 255, 0.2)",
-                        "rgba(255, 159, 64, 0.2)",
+                        "#FFA07A",
+                        "#A2D8D2",
+                        "#A8A2F2",
+                        "#FFFF52",
+                        "#FFB6C1",
+                        "#168CE9",
                     ],
                     borderColor: [
-                        "rgba(255, 99, 132, 1)",
-                        "rgba(54, 162, 235, 1)",
-                        "rgba(255, 206, 86, 1)",
-                        "rgba(75, 192, 192, 1)",
-                        "rgba(153, 102, 255, 1)",
-                        "rgba(255, 159, 64, 1)",
+                        "#FFA07A",
+                        "#A2D8D2",
+                        "#A7A2D2",
+                        "#FFFF52",
+                        "#FFB6C1",
+                        "#168CE9",
                     ],
                     borderWidth: 1,
                 },

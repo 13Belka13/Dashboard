@@ -112,11 +112,11 @@ export const Map = () => {
                                                     outline: 'none',
                                                 },
                                                 hover: {
-                                                    fill: '#F53',
+                                                    fill: '#D4EF00',
                                                     outline: 'none',
                                                 },
                                                 pressed: {
-                                                    fill: '#E42',
+                                                    fill: '#BFEF00',
                                                     outline: 'none',
                                                 },
                                             }}
@@ -154,7 +154,7 @@ export const Map = () => {
                                     ))}
                                 </Select>
                             </Box>
-                            <Checkbox marginLeft="10px" paddingTop="10px" isInvalid mt="1" fontSize='20px' fontWeight="medium" color="#2B2B2B" fontFamily="IBM Plex Sans Thai, sans-serif" paddingBottom="10px">
+                            <Checkbox colorScheme="black" iconColor='#D4EF00' marginLeft="10px" paddingTop="10px"  mt="1" borderColor="gray" fontSize='20px' fontWeight="medium" color="#2B2B2B" fontFamily="IBM Plex Sans Thai, sans-serif" paddingBottom="10px">
                                 Смотреть все
                             </Checkbox>
 

@@ -1,5 +1,5 @@
 import { Card, CardBody, CardHeader } from "@chakra-ui/card";
-import { Box, Heading } from "@chakra-ui/layout";
+import { Box, Heading, Spacer } from "@chakra-ui/layout";
 import * as React from "react";
 import { useState } from "react";
 import { Flex } from "@chakra-ui/layout"
@@ -12,15 +12,6 @@ import BarChart from '../@shared/components/Chart';
 import { LineCharts } from "../@shared/components/LineCharts";
 import { PieCharts } from "../@shared/components/PieCharts";
 
-
-// const DestroyCharts = () => {
-//     if (BarChart1 != null) {
-//         BarChart1.destroy();
-//     }
-//     if (LineChart != null) {
-//         LineChart.destroy();
-//     }
-// }
 
 
 export function MainDataPage () {
@@ -116,8 +107,9 @@ export function MainDataPage () {
 
     <CardBody>
         {/*отображение нескольких графиков */}
-        <Box>
-            <BarChart  />
+        <Box marginTop="30px" marginBottom="30px">
+            <BarChart />
+            <Box height="45px"></Box>
             <LineCharts />
             {/* <PieCharts /> */}
         </Box>
