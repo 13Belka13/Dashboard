@@ -101,11 +101,11 @@ export const Map = () => {
                                                     outline: 'none',
                                                 },
                                                 hover: {
-                                                    fill: '#F53',
+                                                    fill: '#D4EF00',
                                                     outline: 'none',
                                                 },
                                                 pressed: {
-                                                    fill: '#E42',
+                                                    fill: '#BFEF00',
                                                     outline: 'none',
                                                 },
                                             }}
