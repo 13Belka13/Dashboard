@@ -31,7 +31,7 @@ import {
     LineController,
     BarController
 } from 'chart.js';
-import  LineChar  from "../@shared/components/LineChart";
+
 
 ChartsJS.register(
     LinearScale,
